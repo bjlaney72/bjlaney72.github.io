@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <title>The Psychic Game</title>
+</head>
+
+<body>
+
+
+    <h1><a href="#"  data-toggle="tooltip" title="Press any key between `a` and `z` on the keyboard to begin">The Psychic Game</a></h1>
+
+    <h2 class="d-inline">Guess what letter I'm thinking of...</h2>
+    <br>
+    <br>
+    <h3 class="d-inline">Wins: </h3>
+    <h3 Id="win-inc" class="d-inline">0</h3>
+    <br>
+    <h3 class="d-inline">Losses: </h3>
+    <h3 Id="loss-inc" class="d-inline">0</h3>
+    <br>
+    <h3 class="d-inline">Guesses remaining: </h3>
+    <h3 Id="count-inc" class="d-inline">9</h3>
+    <br>
+    <h3 Id="user-guesses" class="d-inline">Your guesses so far: </h3>
+    <br>
+
+
+
+    <!--       <button Id="begin1" type="button" class="btn-primary btn-sm btn-outline-dark">Dark</button> -->
+
+
+<!--     <script>
+        
+        //global constants and variables
+        const min = 97
+        const max = 122
+        let wins = 0
+        let losses = 0
+        let remaining = 9
+        let compGuess = getRandomLetter()
+        let userGuess
+        let userGuesses = []
+        let gameOutcomes = []
+  
+        function getRandomLetter() {
+            lower = Math.ceil(min);
+            upper = Math.floor(max);
+            let thisGuess = String.fromCharCode(Math.floor(Math.random() * (upper - lower + 1)) + lower);
+            console.log("computer guess: " + thisGuess);
+            return thisGuess
+        }
+
+        function updateUserGuesses(userGuess) {
+            var node = document.createElement("h3");
+            node.setAttribute("class", "d-inline added-div");
+            var textnode = document.createTextNode(" " + userGuess);
+            node.appendChild(textnode);
+            document.getElementById("user-guesses").appendChild(node);     
+        }
+
+        function removeElementsByClass() {
+            var elements = document.getElementsByClassName("added-div");
+            while (elements.length > 0) {
+                elements[0].parentNode.removeChild(elements[0]);
+            }
+        }
+
+        function updateRemaining(rem) {
+            document.getElementById("count-inc").innerHTML = rem;
+        }
+
+        function updateUserWins(winCount) {
+            thisDiv = document.getElementById("win-inc");
+            thisDiv.innerHTML = winCount;
+        }
+
+        function updateUserLosses(lossCount) {
+            thisDiv = document.getElementById("loss-inc");
+            thisDiv.innerHTML = lossCount;
+        }
+
+        function resetGameVariables() {
+            remaining = 9
+            updateRemaining(remaining)
+            compGuess = getRandomLetter()
+            userGuess = ""
+            userGuesses = []
+            removeElementsByClass()
+        }
+
+        function gameStats() {
+            this.outcome = gameResult;
+            this.tries = numUserGuesses;
+
+        }
+
+/*         compGuess = getRandomLetter(min, max) */
+       
+
+        document.addEventListener('keypress', (event) => { //user keypress event listener
+            userGuess = event.key; //game level variable to hold user guess
+            let thisAscii = event.keyCode
+
+            if (thisAscii < min || thisAscii > max) {
+                alert(userGuess + " not a valid selection, try again")
+                return
+            } else if (userGuesses.includes(userGuess)) { //if userGuess hasn't been used before                                                    
+                alert(userGuess + " has already been tried, try again") //then add to userGuesses array
+                return
+            } else {
+                userGuesses.push(userGuess)
+
+                if (userGuess === compGuess) {
+                    wins++
+                    updateUserGuesses(userGuess)
+                    updateUserWins(wins)
+                    alert("you won!  select another letter to play again")
+                    resetGameVariables()
+                } else {
+                    remaining--
+                    updateUserGuesses(userGuess)
+                    updateRemaining(remaining)
+
+                    if (remaining === 0) {
+                        /*  alert("game over " + remaining) */
+                        losses++
+                        alert("you lose!  select another letter to play again")
+                        updateUserLosses(losses)
+                        resetGameVariables()
+                        return;
+                    }
+                }
+            }
+
+
+            console.log("user guess: " + userGuess)
+
+        });
+    </script> -->
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <script src = "assets/javascript/game.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

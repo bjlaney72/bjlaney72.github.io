@@ -1,0 +1,15 @@
+
+h2 {
+    font-size: 24px;
+  }
+
+.output {   
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: 24px;
+font-weight: bold;
+margin-right: 5px
+}
+
+.added-div {
+    font-weight: bold;
+}
